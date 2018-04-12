@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+.site-nav {
+    height: 30px;
+    line-height: 30px;
+    background-color: #F1F1F1;
+
+}
+
+.site-nav-send  , .site-nav-menu  li{
+    position: relative;
+    padding-left: 12px;
+    padding-right: 20px;
+}
+
+
+.site-nav-send i   , .site-nav-menu i{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    line-height: 14px;
+    top: 14px;
+    right: 2px;
+    overflow: hidden;
+
+}
+.site-nav-send s  , .site-nav-menu s {
+    position: absolute;
+    font: 600 12px/150% Consolas;
+    margin-top: -9px;
+}
+
+
+
+.site-nav-menu  li {
+    float: left;
+
+}
+
+.site-nav-menu  li.separator {
+    padding:0 ;
+    margin: 9px 0;
+    width: 1px;
+    height: 12px;
+    background-color: #DDDDDD;
+}
+
+.site-nav-menu  li.cellphone {
+    padding-left: 27px;
+    background:url(../img/tel.png) 9px 5px no-repeat ;
+
+}
+
+.adv {
+    background-color: #FD6500;
+}
+
+.adv  div{
+    position: relative;
+
+}
+
+.adv .adv-close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 19px;
+    height: 19px;
+    background: url(../img/close-banner.png)  bottom  no-repeat;
+}
+
+
+.search-jd  .search-jd-logo {
+    width: 362px;
+    height: 100px;
+    background: url(../img/logo.png ) 0 30px no-repeat;
+}
+
+.search-jd-logo  a{
+    float: left;
+    text-indent: -99999px;
+}
+
+.search-jd-input {
+    width: 538px;
+    height: 36px;
+    padding-top: 25px;
+    
+}
+
+
+.search-jd-input  input {
+    float: left;
+    width: 451px;
+    height: 34px;
+    font: 400 12px/34px "Microsoft YaHei";
+    padding-left: 2px;
+    border: 1px solid #B61D1D;
+    border-right: none;
+}
+
+.search-jd-input button{
+    float: left;
+    width: 82px;
+    height: 36px;
+    font: 400 12px/36px "Microsoft YaHei";
+    text-align: center;
+    background-color: #B61D1D;
+}
+
+.search-jd-cargo {
+    width: 96px;
+    height: 34px;
+    border: 1px solid #DFDFDF;
+    padding-left: 43px;
+    margin-right: 65px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.search-jd-cargo a {
+    font: 400  12px/34px "Microsoft YaHei";
+}
+
+.search-jd-cargo  .cargo-logo {
+    position: absolute;
+    left: 19px;
+    top: 11px;
+    width: 17px;
+    height: 13px;
+    background:  url(../img/tel.png)  0  -59px no-repeat;
+}
+
+.search-jd-cargo  .cargo-quan {
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    background-color: #C81623;
+    right: 20px;
+    top: -3px;
+    text-align: center;
+    color: #EFFFDF;
+    border-radius: 50% 50% 50% 0 ;
+}
+
+.search-jd-cargo  .cargo-go {
+    margin-right: 12px;
+
+}
+
+
+.search-jd-list  a {
+    float: left;
+    padding-right: 10px;
+    height: 28px;
+    font:400 12px/28px "Microsoft YaHei" ;
+
+}
+
+.more-fast-cheap {
+    position: relative;
+    width: 100%;
+    height: 167px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #E6E7E6;
+
+}
+
+.more-fast-cheap img {
+    position: absolute;
+    bottom: 45px;
+    top: 61px;
+    left:50%;
+}
+
+.more-fast-cheap  .more-fast-cheap1 {
+    margin-left:-620px ;
+}
+
+.more-fast-cheap  .more-fast-cheap2 {
+    margin-left:-310px ;
+}
+
+.more-fast-cheap  .more-fast-cheap4 {
+    margin-left:310px;
+}
+
+
+.more-link  {
+    background-color: #F5F5F5;
+    height: 181px;
+    padding-top: 28px;
+
+}
+
+.more-link  dl {
+    float: left;
+    width: 198px;
+}
+
+.more-link .w{
+    height: 180px;
+    border-bottom: 1px solid #E6E7E6;
+}
+
+.more-link   dt{
+    font: 600 14px/32px "Microsoft YaHei" ;
+}
+
+.more-link  dd{
+    font: 400 12px/22px "Microsoft YaHei" ;
+}
+
+.more-link  .more-link-map {
+    width: 198px;
+    height: 153px;
+    background: url(../img/china.png) 0 -128px  no-repeat;
+
+}
+
+.more-link-map  h3{
+    font: 600 14px/32px "Microsoft YaHei" ;
+
+}
+
+.more-link-map  p {
+    font: 400 12px/22px "Microsoft YaHei" ;
+}
+
+.more-link-map  a{
+    font: 400 12px/22px "Microsoft YaHei" ;
+}
+
+
+

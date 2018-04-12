@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello Sea.js</title>
+<link rel="stylesheet" href="../static/hello/src/index/common.css">
+<link rel="stylesheet" href="../static/hello/src/index/index-01.css">
+</head>
+<body>
+
+<div class="nav">
+
+</div>
+<div class="left-fun">
+
+  <ul>
+    <li><a href="#" id="fun1">功能1</a></li>
+    <li><a href="#" id="fun2">功能1</a></li>
+    <li><a href="#" id="fun3">功能1</a></li>
+  </ul>
+
+</div>
+
+<div class="main-container">
+
+<iframe  id="main_frmame" class="main-frame"  src="http://www.baidu.com" >
+
+</iframe>
+</div>
+
+
+
+
+
+<script src="../sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script>
+
+  // Set configuration
+  seajs.config({
+    base: "../sea-modules/",
+    alias: {
+      "jquery": "jquery/jquery/1.10.1/jquery.js"
+    }
+  });
+
+      seajs.use("../static/hello/src/index/index-01" ,function(obj) {
+
+      })
+
+</script>
+
+</body>
+</html>
