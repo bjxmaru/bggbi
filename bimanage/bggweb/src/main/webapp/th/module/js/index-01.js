@@ -3,24 +3,17 @@ define(function (require, exports ,module) {
     require("bootstrap");
 
     require("bootstrap-datetimepicker");
+    require("bootstrap-datetimepicker-zh");
 
-    console.log($.prototype);
-    console.log($(".form-date"));
-
-       $(".form-date").datetimepicker({
-           //language: 'zh-CN',//显示中文
+       $("#datetimepicker").datetimepicker({
+           language: 'zh-CN',//显示中文
            format: 'yyyy-mm-dd',//显示格式
            minView: "month",//设置只显示到月份
-           initialDate: new Date(),//初始化当前日期
+           initialDate: new Date(),//初始化当前日期,
            autoclose: true,//选中自动关闭
-           todayBtn: true//显示今日按钮
+           todayBtn: true , //显示今日按钮
+           format: 'yyyy-mm-dd hh:ii:ss'
        }) ;
-
-    //var a = require("../static/hello/src/index/index-01-aux") ;
-    //var a = require("js/index-01-aux").a ;
-
-    //alert( a) ;
-
 
     var urlStr1 = "http://192.168.50.170:8080/bggweb/jasper/corpInfo.action" ;
     var urlStr2 = "http://www.sina.com.cn" ;

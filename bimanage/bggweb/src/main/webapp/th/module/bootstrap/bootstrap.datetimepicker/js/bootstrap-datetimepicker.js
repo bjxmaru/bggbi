@@ -75,6 +75,7 @@ define(function (require, exports , module) {
 
         // Picker object
         var Datetimepicker = function (element, options) {
+
             var that = this;
 
             this.element = $(element);

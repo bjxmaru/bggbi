@@ -52,8 +52,8 @@
         <div class="form-group">
             <label for="paraDateTime" class="col-sm-2 control-label">日期</label>
             <div class="col-sm-10">
-                <div class="input-group input-append date form_date"  >
-                    <input type="text" class="form-control" id="paraDateTime" name="para.paraDateTime" placeholder="请输入日期">
+                <div class="input-group input-append date " id="datetimepicker" >
+                    <input type="text" class="form-control  "  readonly id="paraDateTime" name="para.paraDateTime" placeholder="请输入日期">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </div>
@@ -126,25 +126,7 @@
 
 
 <script src="../module/seajs/seajs/2.2.0/sea.js"></script>
-<script>
-
-    // Set configuration
-    seajs.config({
-        base: "../module/",
-        alias: {
-            "jquery": "jquery/jquery-3.3.1.js" ,
-            "bootstrap": "bootstrap/bootstrap.dist/js/bootstrap.js",
-            "bootstrap-datetimepicker": "bootstrap/bootstrap.datetimepicker/js/bootstrap-datetimepicker.js"
-        }
-    });
-
-    seajs.use("js/index-01", function (obj) {
-
-    }) ;
-
-
-
-</script>
+<script src="../module/js/seajs-config.js"></script>
 
 </body>
 </html>
