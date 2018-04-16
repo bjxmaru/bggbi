@@ -18,5 +18,5 @@
 
     <!-- Add packages here -->
 
-    <include file="com/bgg/web/jasper/struts-jasper.xml" ></include>
+    <include file="com/bgg/web/jasper/action/struts-jasper.xml" ></include>
 </struts>
