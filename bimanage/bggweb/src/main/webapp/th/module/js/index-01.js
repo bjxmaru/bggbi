@@ -15,6 +15,33 @@ define(function (require, exports ,module) {
            format: 'yyyy-mm-dd hh:ii:ss'
        }) ;
 
+       $("#paraSet").click(function(e) {
+
+            var queryObj = {} ;
+
+            //in main ifame page ,  query object ;
+            //var mainFrameWindow =  document.getElementById("main_frame").contentWindow ;
+            //var temp = $("#main_frame") ;
+            //alert( $("#main_frame").contentDocument.getElementsByTagName("input")[0].value );
+          // alert("asdfsd");
+            //query parameter dialog  value  assigned to  iframe page para object ;
+
+           //alert($("#main_frame").contents().find("#paraVO").html());
+     /*      var theVar = $(window.frames["main_frame"].document);
+           console.log(theVar.find("#paraVO"));
+           var tmp = $("#main_frame").contents().find("#paraVO").find("input[name='para.paraDate']") ;*/
+           //alert(tmp.html()) ;
+           /* mainFrameWindow.para.paraDate = $("#paraDateTime").val() ;
+            mainFrameWindow.para.paraCorpCode = $("#paraCorpCode").val() ;*/
+           $("#main_frame").contents().find("input[name='para.paraDate']").val( $("#paraDateTime").val()) ;
+           $("#main_frame").contents().find("input[name='para.paraCorpCode']").val( $("#paraCorpCode").val()) ;
+
+           $("#main_frame").contents().find("#paraVO").submit() ;
+           return false;
+
+       }) ;
+
+
     var urlStr1 = "http://192.168.50.170:8080/bggweb/jasper/corpInfo.action" ;
     var urlStr2 = "http://www.sina.com.cn" ;
 

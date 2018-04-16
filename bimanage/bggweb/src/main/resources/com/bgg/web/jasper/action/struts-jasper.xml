@@ -9,8 +9,8 @@
 
     <package name="jasper" namespace="/jasper" extends="default">
 
-        <action name="corpInfo" class="baseDoc" method="corpInfo" >
-            <result name="corpInfo" >/WEB-INF/jsp/hello.jsp</result>
+        <action name="corpInfo" class="BaseDocAction" method="corpInfo" >
+            <result name="corpInfo" >/WEB-INF/jsp/query-index.jsp</result>
         </action>
 
     </package>
