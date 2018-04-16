@@ -16,6 +16,7 @@
     <modules>
         <module>bggweb</module>
         <module>bggservice</module>
+        <module>bggdao</module>
     </modules>
 
 
