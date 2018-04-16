@@ -26,6 +26,9 @@
         <junit-version>4.12</junit-version>
         <com.bggbi.bggweb.version>1.0-SNAPSHOT</com.bggbi.bggweb.version>
         <com.bggbi.bggservice.version>1.0-SNAPSHOT</com.bggbi.bggservice.version>
+        <com.bggbi.bggdao.version>1.0-SNAPSHOT</com.bggbi.bggdao.version>
+        <com.bggbi.bggpojo.version>1.0-SNAPSHOT</com.bggbi.bggpojo.version>
+        <com.bggbi.bggutils.version>1.0-SNAPSHOT</com.bggbi.bggutils.version>
     </properties>
 
 
