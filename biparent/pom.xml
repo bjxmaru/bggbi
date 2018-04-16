@@ -24,6 +24,8 @@
         <jaspertreports-version>6.4.3</jaspertreports-version>
         <struts-jasperreports-plugin-version>2.5.14.1</struts-jasperreports-plugin-version>
         <junit-version>4.12</junit-version>
+        <com.bggbi.bggweb.version>1.0-SNAPSHOT</com.bggbi.bggweb.version>
+        <com.bggbi.bggservice.version>1.0-SNAPSHOT</com.bggbi.bggservice.version>
     </properties>
 
 
