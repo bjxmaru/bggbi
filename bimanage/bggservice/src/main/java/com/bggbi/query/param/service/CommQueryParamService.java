@@ -1,4 +1,5 @@
 package com.bggbi.query.param.service;
 
-public class CommQueryParamService {
+public interface CommQueryParamService {
+    public String getYearStrFromDateTimeStr(String dateTimeStr)  ;
 }
