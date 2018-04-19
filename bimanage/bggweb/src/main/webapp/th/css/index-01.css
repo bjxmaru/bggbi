@@ -17,6 +17,17 @@
 
 }
 
+.left-fun  li {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.left-fun li  a {
+    font: 600 15px/30px  "Microsoft YaHei "
+}
+
 
 .nav .para-tool  li{
     float: left;
@@ -61,3 +72,17 @@
     z-index: 10;
     background-color: #d3d3d3;
 }
+
+.close-para-dialog  {
+    display:  block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 19px;
+    height: 19px;
+    background: url("../img/close-banner.png")  0  0 no-repeat ;
+}
+
+
+
+

@@ -22,7 +22,7 @@
         <struts.version>2.3.24</struts.version>
         <javassist.version>3.18.1-GA</javassist.version>
         <jaspertreports-version>6.4.3</jaspertreports-version>
-        <struts-jasperreports-plugin-version>2.5.14.1</struts-jasperreports-plugin-version>
+        <struts-jasperreports-plugin-version>2.5.16</struts-jasperreports-plugin-version>
         <junit-version>4.12</junit-version>
         <com.bggbi.bggweb.version>1.0-SNAPSHOT</com.bggbi.bggweb.version>
         <com.bggbi.bggservice.version>1.0-SNAPSHOT</com.bggbi.bggservice.version>
@@ -36,13 +36,6 @@
     <!-- 锁定版本，struts2-2.3.24、spring4.2.4、hibernate5.0.7 -->
     <dependencyManagement>
         <dependencies>
-
-            <dependency>
-                <groupId>net.sf.jasperreports</groupId>
-                <artifactId>jasperreports</artifactId>
-                <version>${jaspertreports-version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -111,6 +104,12 @@
                 <groupId>org.apache.struts</groupId>
                 <artifactId>struts2-jasperreports-plugin</artifactId>
                 <version>${struts-jasperreports-plugin-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+                <version>${jaspertreports-version}</version>
             </dependency>
 
         </dependencies>
@@ -247,19 +246,15 @@
             <artifactId>struts2-json-plugin</artifactId>
         </dependency>
 
-
-      <!--  <dependency>
-            <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports</artifactId>
-        </dependency>
-
-
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-jasperreports-plugin</artifactId>
-        </dependency>-->
+        </dependency>
 
-
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+        </dependency>
     </dependencies>
 
 
