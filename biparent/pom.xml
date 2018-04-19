@@ -17,13 +17,16 @@
     <!-- 属性 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.version>4.3.13.RELEASE</spring.version>
         <hibernate.version>5.0.7.Final</hibernate.version>
-        <struts.version>2.3.24</struts.version>
+        <struts.version>2.5.16</struts.version>
         <javassist.version>3.18.1-GA</javassist.version>
         <jaspertreports-version>6.4.3</jaspertreports-version>
         <struts-jasperreports-plugin-version>2.5.16</struts-jasperreports-plugin-version>
         <junit-version>4.12</junit-version>
+        <servlet-api>3.1.0</servlet-api>
+        <jsp-api>2.0</jsp-api>
+        <jstl-api>1.2</jstl-api>
         <com.bggbi.bggweb.version>1.0-SNAPSHOT</com.bggbi.bggweb.version>
         <com.bggbi.bggservice.version>1.0-SNAPSHOT</com.bggbi.bggservice.version>
         <com.bggbi.bggdao.version>1.0-SNAPSHOT</com.bggbi.bggdao.version>
@@ -181,15 +184,15 @@
         <!-- servlet jsp -->
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet-api}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>javax.servlet</groupId>
+            <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
+            <version>${jsp-api}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -205,7 +208,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <version>${jstl-api}</version>
         </dependency>
 
         <dependency>

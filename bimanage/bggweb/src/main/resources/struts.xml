@@ -11,7 +11,7 @@
     <constant name="struts.action.extension" value="action,,"></constant>
     <constant name="struts.devMode" value="true" />
 
-    <package name="default" namespace="/" extends="struts-default ,json-default ">
+    <package name="default" namespace="/" extends="jasperreports-default,json-default ">
 
     </package>
 
