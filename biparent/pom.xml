@@ -21,17 +21,25 @@
         <hibernate.version>5.0.7.Final</hibernate.version>
         <struts.version>2.5.16</struts.version>
         <javassist.version>3.18.1-GA</javassist.version>
-        <jaspertreports-version>6.4.3</jaspertreports-version>
+       <!-- <jaspertreports-version>6.4.3</jaspertreports-version>-->
+       <!-- <jaspertreports-version>6.5.1</jaspertreports-version>-->
+        <ant-version>1.10.3</ant-version>
+        <ivy-version>2.4.0</ivy-version>
+        <jaspertreports-version>5.6.1</jaspertreports-version>
         <struts-jasperreports-plugin-version>2.5.16</struts-jasperreports-plugin-version>
         <junit-version>4.12</junit-version>
         <servlet-api>3.1.0</servlet-api>
         <jsp-api>2.0</jsp-api>
         <jstl-api>1.2</jstl-api>
+        <log4j-varsion>2.11.0</log4j-varsion>
         <com.bggbi.bggweb.version>1.0-SNAPSHOT</com.bggbi.bggweb.version>
         <com.bggbi.bggservice.version>1.0-SNAPSHOT</com.bggbi.bggservice.version>
         <com.bggbi.bggdao.version>1.0-SNAPSHOT</com.bggbi.bggdao.version>
         <com.bggbi.bggpojo.version>1.0-SNAPSHOT</com.bggbi.bggpojo.version>
         <com.bggbi.bggutils.version>1.0-SNAPSHOT</com.bggbi.bggutils.version>
+
+
+        <commons-javaflow>1590792</commons-javaflow>
     </properties>
 
 
@@ -258,6 +266,48 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-varsion}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j-varsion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+            <version>${log4j-varsion}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>${ant-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.ivy</groupId>
+            <artifactId>ivy</artifactId>
+            <version>${ivy-version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.google.code.maven-play-plugin.org.apache.commons</groupId>
+            <artifactId>commons-javaflow</artifactId>
+            <version>${commons-javaflow}</version>
+        </dependency>
+
+
+
     </dependencies>
 
 

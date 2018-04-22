@@ -12,6 +12,9 @@
         <action name="corpInfo" class="BaseDocAction" method="corpInfo" >
             <result name="corpInfo" >/WEB-INF/jsp/query-index.jsp</result>
         </action>
+        <action name="test" class="BaseDocAction" method="test" >
+            <result name="test" >/WEB-INF/jsp/test.jsp</result>
+        </action>
 
     </package>
 
