@@ -82,9 +82,14 @@ public class ParameterJasperAction extends ActionSupport{
         return  SUCCESS ;
     }
 
+
+
     public String index() {
         return SUCCESS ;
     }
+
+
+
 
 
 }
