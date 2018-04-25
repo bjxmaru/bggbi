@@ -10,3 +10,4 @@ seajs.config({
 });
 
 seajs.use("js/index-01") ;
+seajs.use("js/fontTest") ;

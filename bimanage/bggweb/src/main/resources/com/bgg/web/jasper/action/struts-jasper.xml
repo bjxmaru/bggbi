@@ -9,12 +9,16 @@
 
     <package name="jasper" namespace="/jasper" extends="default">
 
-        <action name="corpInfo" class="BaseDocAction" method="corpInfo" >
-            <result name="corpInfo" >/WEB-INF/jsp/query-index.jsp</result>
+
+        <action name="jasper_compile" class="ParameterJasperAction" method="compile" >
+            <result>/WEB-INF/jsp/query-form.jsp</result>
         </action>
-        <action name="test" class="BaseDocAction" method="test" >
-            <result name="test" >/WEB-INF/jsp/test.jsp</result>
+
+        <action name="jasper_index" class="ParameterJasperAction" method="index" >
+            <result>/WEB-INF/jsp/query-form.jsp</result>
         </action>
+
+
 
     </package>
 

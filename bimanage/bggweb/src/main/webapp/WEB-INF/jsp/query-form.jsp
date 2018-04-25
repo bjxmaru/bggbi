@@ -14,9 +14,13 @@
 hello , jsp  测试
 
 
-<form id="paraVO" style="display: block;" method="post" action="http://localhost:8080/bggweb/jasper/corpInfo.action">
+<form id="paraVO" style="display: block;" method="post" action="http://localhost:8080/bggweb/jasper/a.action">
     <input type="text" name="para.paraDate"  value="para.paraDate">
     <input type="text" name="para.paraCorpCode" value="para.paraCorpCode">
+    <input type="text" name="jasperUncompiledFilePath" value="" >
+    <input type="text" name="jasperCompiledFilePath" value="" >
+    <input type="text" name="funcCode" value="" >
+
     <input type="submit" >
 </form>
 <script>
@@ -24,8 +28,6 @@ hello , jsp  测试
         paraCorpCode:"1001" ,
         paraDate : "2018-04-16 13:23:12"
     };
-
-
 
 
 </script>
