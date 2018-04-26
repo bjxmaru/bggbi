@@ -8,9 +8,9 @@ define(function (require, exports ,module) {
             $(".para-dialog").find("#funcCode").val("1001") ;
             var paraVOForm = $("#main_frame").contents().find("#paraVO") ;
             /*var inputEleStr = "<input type='text' name='funcCode' value='1001'></input>";*/
-            paraVOForm.find("input[name='jasperUncompiledFilePath']").val("/WEB-INF/jasperResourceXML/testModel/font.xml") ;
-            paraVOForm.find("input[name='jasperCompiledFilePath']").val("/WEB-INF/jasperDesignJasper/testModel/font.jasper") ;
-            paraVOForm.find("input[name='funcCode']").val("1001") ;
+            paraVOForm.find("input[name='jasperQueryVO.jasperUncompiledFilePath']").val("/WEB-INF/jasperResourceXML/testModel/font.xml") ;
+            paraVOForm.find("input[name='jasperQueryVO.jasperCompiledFilePath']").val("/WEB-INF/jasperDesignJasper/testModel/font.jasper") ;
+            paraVOForm.find("input[name='jasperQueryVO.funcCode']").val("1001") ;
             paraVOForm.attr("action" , "http://192.168.50.170:8080/bggweb/jasper/jasper_compile.action?compileJasper=1") ;
             $(".para-dialog").css("display", "block");
         }

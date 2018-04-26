@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: bjx
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -14,15 +16,20 @@
 hello , jsp  测试
 
 
-<form id="paraVO" style="display: block;" method="post" action="http://localhost:8080/bggweb/jasper/a.action">
-    <input type="text" name="para.paraDate"  value="para.paraDate">
-    <input type="text" name="para.paraCorpCode" value="para.paraCorpCode">
-    <input type="text" name="jasperUncompiledFilePath" value="" >
-    <input type="text" name="jasperCompiledFilePath" value="" >
-    <input type="text" name="funcCode" value="" >
+<form id="paraVO" style="display: block;" method="post" action="http://localhost:8080/bggweb/jasper/jasper_index.action">
+    <input type="text" name="jasperQueryVO.qDateStr"  value="para.paraDate">
+    <input type="text" name="jasperQueryVO.qOrgCode" value="para.paraCorpCode">
+    <input type="text" name="jasperQueryVO.jasperUncompiledFilePath" value="" >
+    <input type="text" name="jasperQueryVO.jasperCompiledFilePath" value="" >
+    <input type="text" name="jasperQueryVO.funcCode" value="" >
 
     <input type="submit" >
 </form>
+
+
+<div>
+  <s:debug></s:debug>
+</div>
 <script>
     var para = {
         paraCorpCode:"1001" ,

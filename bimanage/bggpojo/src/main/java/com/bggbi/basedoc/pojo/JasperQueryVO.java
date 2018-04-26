@@ -1,8 +1,11 @@
 package com.bggbi.basedoc.pojo;
 
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JREmptyDataSource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.HashMap;
 
 @Repository("JasperQueryVO")
@@ -17,12 +20,75 @@ public class JasperQueryVO {
     private String timeZone;
     private boolean wrapField = true;
 
-    private HashMap<String, String> queryParameter =new HashMap<>();
+    private boolean compileJasper = true ;
 
-    private String jasperUncompiledFilePath = "" ;
-    private String jasperCompiledFilePath = "" ;
-    private boolean compileJasper  =true;
-    private String funcCode ="" ;
+    private HashMap<String, String> queryParameter = new HashMap<>();
+
+
+    private String jrResultLocation ;
+
+    public String getJrResultLocation() {
+        return jrResultLocation;
+    }
+
+    public void setJrResultLocation(String jrResultLocation) {
+        this.jrResultLocation = jrResultLocation;
+    }
+
+    public JRDataSource getJrResultdataSource() {
+        return jrResultdataSource;
+    }
+
+    public void setJrResultdataSource(JRDataSource jrResultdataSource) {
+        this.jrResultdataSource = jrResultdataSource;
+    }
+
+    public String getJrResultformat() {
+        return jrResultformat;
+    }
+
+    public void setJrResultformat(String jrResultformat) {
+        this.jrResultformat = jrResultformat;
+    }
+
+    private JRDataSource jrResultdataSource = new JREmptyDataSource( ) ;
+    private String jrResultformat = "text/html";
+
+    public Date getqDate() {
+        return qDate;
+    }
+
+    public void setqDate(Date qDate) {
+        this.qDate = qDate;
+    }
+
+    public String getqDateStr() {
+        return qDateStr;
+    }
+
+    public void setqDateStr(String qDateStr) {
+        this.qDateStr = qDateStr;
+    }
+
+
+    private Date qDate;
+    private String qDateStr;
+
+    public String getqOrgCode() {
+        return qOrgCode;
+    }
+
+    public void setqOrgCode(String qOrgCode) {
+        this.qOrgCode = qOrgCode;
+    }
+
+    private String qOrgCode;
+
+
+    private String jasperUncompiledFilePath = "";
+    private String jasperCompiledFilePath = "";
+
+    private String funcCode = "";
 
     public String getDataSource() {
         return dataSource;

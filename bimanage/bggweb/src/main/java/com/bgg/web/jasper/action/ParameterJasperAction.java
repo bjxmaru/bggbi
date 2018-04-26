@@ -1,5 +1,6 @@
 package com.bgg.web.jasper.action;
 
+import com.bggbi.basedoc.pojo.JasperQueryVO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.ValueStack;
@@ -8,6 +9,8 @@ import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 import net.sf.jasperreports.engine.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -20,66 +23,53 @@ import java.util.Map;
 @Controller("ParameterJasperAction")
 @Scope("prototype")
 public class ParameterJasperAction extends ActionSupport{
-    String jasperUncompiledFilePath = "" ;
-    String jasperCompiledFilePath = "" ;
-    boolean compileJasper  =true;
-    String funcCode ="" ;
-    static String RTN_COMPILE_JASPER = "compileJasper";
 
 
-    public String getJasperUncompiledFilePath() {
-        return jasperUncompiledFilePath;
+    @Autowired
+    @Qualifier("JasperQueryVO")
+    JasperQueryVO  jasperQueryVO ;
+
+
+    public JasperQueryVO getJasperQueryVO() {
+        return jasperQueryVO;
     }
 
-    public void setJasperUncompiledFilePath(String jasperUncompiledFilePath) {
-        this.jasperUncompiledFilePath = jasperUncompiledFilePath;
-    }
-
-    public String getJasperCompiledFilePath() {
-        return jasperCompiledFilePath;
-    }
-
-    public void setJasperCompiledFilePath(String jasperCompiledFilePath) {
-        this.jasperCompiledFilePath = jasperCompiledFilePath;
-    }
-
-    public boolean isCompileJasper() {
-        return compileJasper;
-    }
-
-    public void setCompileJasper(boolean compileJasper) {
-        this.compileJasper = compileJasper;
-    }
-
-    public String getFuncCode() {
-        return funcCode;
-    }
-
-    public void setFuncCode(String funcCode) {
-        this.funcCode = funcCode;
+    public void setJasperQueryVO(JasperQueryVO jasperQueryVO) {
+        this.jasperQueryVO = jasperQueryVO;
     }
 
 
-    public String compile() throws IOException, JRException {
 
-        jasperUncompiledFilePath =  ServletActionContext.getServletContext().getRealPath(jasperUncompiledFilePath);
-        jasperCompiledFilePath   =  ServletActionContext.getServletContext().getRealPath(jasperCompiledFilePath);
 
-        File fileDest = new File(jasperCompiledFilePath);
+    public String jasperCompile() throws IOException, JRException {
+
+        jasperQueryVO.setJasperUncompiledFilePath( ServletActionContext.getServletContext().getRealPath(jasperQueryVO.getJasperUncompiledFilePath()) );
+
+        System.out.println(jasperQueryVO.getJasperUncompiledFilePath());
+
+        jasperQueryVO.setJasperCompiledFilePath( ServletActionContext.getServletContext().getRealPath(jasperQueryVO.getJasperCompiledFilePath()) );
+
+        System.out.println(jasperQueryVO.getJasperCompiledFilePath());
+
+        File fileDest = new File(jasperQueryVO.getJasperUncompiledFilePath());
 
         if(!fileDest.getParentFile().exists() ) {
             fileDest.getParentFile().mkdirs();
         }
+
 
         if (! fileDest.exists()) {
 
             fileDest.createNewFile() ;
         }
 
-        JasperReportsContext jasperReportsContext = new SimpleJasperReportsContext();
-        JasperCompileManager.getInstance(jasperReportsContext).compileToFile(jasperUncompiledFilePath, jasperCompiledFilePath);
 
-        return  SUCCESS ;
+        JasperReportsContext jasperReportsContext = new SimpleJasperReportsContext();
+        JasperCompileManager.getInstance(jasperReportsContext).compileToFile(jasperQueryVO.getJasperUncompiledFilePath(), jasperQueryVO.getJasperCompiledFilePath());
+
+        ActionContext.getContext().getValueStack().push(jasperQueryVO);
+
+        return  "jasperCompile" ;
     }
 
 
