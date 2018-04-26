@@ -1,7 +1,12 @@
 package com.bggbi.basedoc.pojo;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 
+@Repository("JasperQueryVO")
+@Scope("prototype")
 public class JasperQueryVO {
     private String dataSource;
     private String format;
