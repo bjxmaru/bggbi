@@ -12,6 +12,7 @@ define(function (require, exports ,module) {
             paraVOForm.find("input[name='jasperQueryVO.jasperCompiledFilePath']").val("/WEB-INF/jasperDesignJasper/testModel/font.jasper") ;
             paraVOForm.find("input[name='jasperQueryVO.funcCode']").val("1001") ;
             paraVOForm.attr("action" , "http://192.168.50.170:8080/bggweb/jasper/jasper_compile.action?compileJasper=1") ;
+            alert("sadfsdfsd");
             $(".para-dialog").css("display", "block");
         }
     } ;

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 @Repository("JasperQueryVO")
 @Scope("prototype")
@@ -22,7 +23,25 @@ public class JasperQueryVO {
 
     private boolean compileJasper = true ;
 
-    private HashMap<String, String> queryParameter = new HashMap<>();
+    public Map<String, Object> getJasperreportsParameter() {
+        return jasperreportsParameter;
+    }
+
+    public void setJasperreportsParameter(Map<String, Object> jasperreportsParameter) {
+        this.jasperreportsParameter = jasperreportsParameter;
+    }
+
+    public Map<String, Object> getQueryRptParameter() {
+        return queryRptParameter;
+    }
+
+    public void setQueryRptParameter(Map<String, Object> queryRptParameter) {
+        this.queryRptParameter = queryRptParameter;
+    }
+
+    private Map<String, Object> jasperreportsParameter = new HashMap<>();
+
+    private Map<String, Object> queryRptParameter = new HashMap<>();
 
 
     private String jrResultLocation ;
@@ -152,14 +171,6 @@ public class JasperQueryVO {
 
     public void setWrapField(boolean wrapField) {
         this.wrapField = wrapField;
-    }
-
-    public HashMap<String, String> getQueryParameter() {
-        return queryParameter;
-    }
-
-    public void setQueryParameter(HashMap<String, String> queryParameter) {
-        this.queryParameter = queryParameter;
     }
 
     public String getJasperUncompiledFilePath() {

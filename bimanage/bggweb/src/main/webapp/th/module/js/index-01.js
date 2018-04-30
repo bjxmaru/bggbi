@@ -38,10 +38,11 @@ define(function (require, exports ,module) {
            $("#main_frame").contents().find("input[name='para.paraDate']").val( $("#paraDateTime").val()) ;
            $("#main_frame").contents().find("input[name='para.paraCorpCode']").val( $("#paraCorpCode").val()) ;
 
-           $("#main_frame").contents().find("#paraVO").submit() ;
-
            // query param dialog could not show  in the front window  in normal time ;
            $(".para-dialog").css("display" , "none") ;
+
+           $("#main_frame").contents().find("#paraVO").submit() ;
+
            return false;
 
        }) ;

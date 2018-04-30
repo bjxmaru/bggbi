@@ -43,29 +43,30 @@ public class ParameterJasperAction extends ActionSupport{
 
     public String jasperCompile() throws IOException, JRException {
 
+
         jasperQueryVO.setJasperUncompiledFilePath( ServletActionContext.getServletContext().getRealPath(jasperQueryVO.getJasperUncompiledFilePath()) );
 
-        System.out.println(jasperQueryVO.getJasperUncompiledFilePath());
 
         jasperQueryVO.setJasperCompiledFilePath( ServletActionContext.getServletContext().getRealPath(jasperQueryVO.getJasperCompiledFilePath()) );
 
-        System.out.println(jasperQueryVO.getJasperCompiledFilePath());
+        File tempFile = new File(jasperQueryVO.getJasperCompiledFilePath());
 
-        File fileDest = new File(jasperQueryVO.getJasperUncompiledFilePath());
 
-        if(!fileDest.getParentFile().exists() ) {
-            fileDest.getParentFile().mkdirs();
+        if(!tempFile.getParentFile().exists() ) {
+            tempFile.getParentFile().mkdirs();
         }
 
 
-        if (! fileDest.exists()) {
+        if (! tempFile.exists()) {
 
-            fileDest.createNewFile() ;
+            tempFile.createNewFile() ;
         }
 
 
-        JasperReportsContext jasperReportsContext = new SimpleJasperReportsContext();
+      /*  JasperReportsContext jasperReportsContext = new SimpleJasperReportsContext();
         JasperCompileManager.getInstance(jasperReportsContext).compileToFile(jasperQueryVO.getJasperUncompiledFilePath(), jasperQueryVO.getJasperCompiledFilePath());
+        */
+        JasperCompileManager.compileReportToFile(jasperQueryVO.getJasperUncompiledFilePath(), jasperQueryVO.getJasperCompiledFilePath());
 
         ActionContext.getContext().getValueStack().push(jasperQueryVO);
 

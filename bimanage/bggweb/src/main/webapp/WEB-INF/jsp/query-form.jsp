@@ -17,8 +17,8 @@ hello , jsp  测试
 
 
 <form id="paraVO" style="display: block;" method="post" action="http://localhost:8080/bggweb/jasper/jasper_index.action">
-    <input type="text" name="jasperQueryVO.qDateStr"  value="para.paraDate">
-    <input type="text" name="jasperQueryVO.qOrgCode" value="para.paraCorpCode">
+    <input type="text" name="jasperQueryVO.jasperreportsParameter.qDateStr"  value="para.paraDate">
+    <input type="text" name="jasperQueryVO.jasperreportsParameter.qOrgCode" value="para.paraCorpCode">
     <input type="text" name="jasperQueryVO.jasperUncompiledFilePath" value="" >
     <input type="text" name="jasperQueryVO.jasperCompiledFilePath" value="" >
     <input type="text" name="jasperQueryVO.funcCode" value="" >

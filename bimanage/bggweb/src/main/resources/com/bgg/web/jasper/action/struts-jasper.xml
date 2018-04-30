@@ -13,9 +13,9 @@
         <action name="jasper_compile" class="ParameterJasperAction" method="jasperCompile" >
             <result>/WEB-INF/jsp/query-form.jsp</result>
             <result name="jasperCompile" type="chain">
-                <param name="actionName" >jasper_dataSource</param>
+                <param name="actionName" >jasper_font</param>
                 <param name="namespace" >/jasper</param>
-                <param name="methodName" >jasperDataSource</param>
+                <param name="methodName" >jasperDataSourceFont</param>
             </result>
         </action>
 
@@ -24,7 +24,21 @@
         </action>
 
         <action name="jasper_dataSource" class="DataSourceJasperAction" method="jasperDataSource" >
-            <result name="jasperDataSource">/WEB-INF/jsp/query-form.jsp</result>
+            <result name="jasperDataSource" type="jasper">
+                <param name="dataSource">customBeanList</param>
+                <param name="format">HTML</param>
+                <param name="reportParameters">reportParameters</param>
+                <param name="location">/WEB-INF/jasperDesignJasper/testModel/dataSourceReport.jasper</param>
+            </result>
+        </action>
+
+     <action name="jasper_font" class="DataSourceJasperAction" method="jasperDataSourceFont" >
+            <result name="jasperDataSourceFont" type="jasper">
+                <param name="dataSource">customBeanList</param>
+                <param name="format">HTML</param>
+                <param name="reportParameters">reportParameters</param>
+                <param name="location">/WEB-INF/jasperDesignJasper/testModel/font.jasper</param>
+            </result>
         </action>
 
 
