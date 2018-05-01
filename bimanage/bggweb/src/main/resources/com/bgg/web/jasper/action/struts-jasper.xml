@@ -10,6 +10,27 @@
     <package name="jasper" namespace="/jasper" extends="default">
 
 
+        <result-types>
+            <result-type name="chain" class="com.opensymphony.xwork2.ActionChainResult"/>
+            <result-type name="dispatcher" class="org.apache.struts2.result.ServletDispatcherResult" default="true"/>
+            <result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult"/>
+            <result-type name="httpheader" class="org.apache.struts2.result.HttpHeaderResult"/>
+            <result-type name="redirect" class="org.apache.struts2.result.ServletRedirectResult"/>
+            <result-type name="redirectAction" class="org.apache.struts2.result.ServletActionRedirectResult"/>
+            <result-type name="stream" class="org.apache.struts2.result.StreamResult"/>
+            <result-type name="velocity" class="org.apache.struts2.result.VelocityResult"/>
+            <result-type name="xslt" class="org.apache.struts2.views.xslt.XSLTResult"/>
+            <result-type name="plainText" class="org.apache.struts2.result.PlainTextResult" />
+            <result-type name="postback" class="org.apache.struts2.result.PostbackResult" />
+            <result-type name="jasperBjx" class="com.bgg.web.jasper.action.JasperReportsResultBjx"/>
+        </result-types>
+
+        <global-results>
+            <result name="plainText">/test.jsp</result>
+        </global-results>
+
+
+
         <action name="jasper_compile" class="ParameterJasperAction" method="jasperCompile" >
             <result>/WEB-INF/jsp/query-form.jsp</result>
             <result name="jasperCompile" type="chain">
@@ -32,12 +53,13 @@
             </result>
         </action>
 
-     <action name="jasper_font" class="DataSourceJasperAction" method="jasperDataSourceFont" >
-            <result name="jasperDataSourceFont" type="jasper">
+     <action name="jasper_font" class="DataSourceJasperAction" method="jasperFont" >
+            <result name="jasperFont" type="jasperBjx">
                 <param name="dataSource">customBeanList</param>
                 <param name="format">HTML</param>
+                <param name="parse">true</param>
                 <param name="reportParameters">reportParameters</param>
-                <param name="location">/WEB-INF/jasperDesignJasper/testModel/font.jasper</param>
+                <param name="location">${location}</param>
             </result>
         </action>
 

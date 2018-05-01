@@ -264,6 +264,12 @@
             <artifactId>jasperreports</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>${jaspertreports-version}</version>
+        </dependency>
+
 
         <dependency>
                       <groupId>org.slf4j</groupId>

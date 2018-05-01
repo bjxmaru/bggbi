@@ -5,6 +5,9 @@ import com.bggbi.basedoc.pojo.JasperQueryVO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -51,14 +54,18 @@ public class DataSourceJasperAction  extends ActionSupport {
 
 
 
-    public String jasperDataSourceFont() {
+    public String jasperFont() throws JRException {
 
-        JasperQueryVO jasperQueryVO = (JasperQueryVO) ActionContext.getContext().getValueStack().findValue(JasperQueryVO.class.getSimpleName());
+       /* JasperQueryVO jasperQueryVO = (JasperQueryVO) ActionContext.getContext().getValueStack().findValue(JasperQueryVO.class.getSimpleName());
 
         jasperQueryVO.setJrResultdataSource(new JREmptyDataSource());
         jasperQueryVO.setJrResultformat("text/html");
-        jasperQueryVO.setJrResultLocation(jasperQueryVO.getJasperCompiledFilePath());
+        jasperQueryVO.setJrResultLocation(jasperQueryVO.getJasperCompiledFilePath());*/
 
+        JasperCompileManager.compileReportToFile( ServletActionContext.getServletContext().getRealPath("/WEB-INF/jasperResourceXML/testModel/font.xml")  ,
+                ServletActionContext.getServletContext().getRealPath( "/WEB-INF/jasperDesignJasper/testModel/font.jasper"));
+
+        location =   "/WEB-INF/jasperDesignJasper/testModel/font.jasper";
         customBeanList = genCustomBean() ;
 
         reportParameters = new HashMap<>(2);
@@ -66,14 +73,16 @@ public class DataSourceJasperAction  extends ActionSupport {
         reportParameters.put("DataFile", "CustomBeanFactory.java - Bean Collection");
 
 
-        location = "/WEB-INF/jasperDesignJasper/testModel/font.jasper" ;
+    ActionContext.getContext().getValueStack().getContext().put("customBeanList", customBeanList);
+        ActionContext.getContext().getValueStack().getContext().put("reportParameters", reportParameters);
+        ActionContext.getContext().getValueStack().getContext().put("location", location);
 
-        ActionContext.getContext().getValueStack().push(customBeanList);
-        ActionContext.getContext().getValueStack().push(reportParameters);
-        ActionContext.getContext().getValueStack().push(location);
+
+        Object customBeanList = ActionContext.getContext().getValueStack().findValue("customBeanList");
+
 
         System.out.println("------------------------------------------------font jasper reports ");
-        return "jasperDataSourceFont";
+        return "jasperFont";
     }
 
 
