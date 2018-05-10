@@ -1,5 +1,9 @@
 define(function (require, exports ,module) {
-    var $ = require("jquery") ;
+
+    if(  jQuery  === "undefined"  ) {
+        $ = jQuery  = require("jquery") ;
+    }
+    //var $ = require("jquery") ;
     require("bootstrap");
 
     require("bootstrap-datetimepicker");
@@ -11,7 +15,6 @@ define(function (require, exports ,module) {
     //if resetting link is click ,  query param dialog could show  in the front window;
     $("#resettingPara").click(function (e) {
         $(".para-dialog").css("display" , "block") ;
-
     }) ;
 
     //if the close img is click ,  the query param dialog disapplear ;
