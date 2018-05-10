@@ -24,7 +24,7 @@
         <javassist.version>3.22.0-GA</javassist.version>
        <!-- <jaspertreports-version>6.4.3</jaspertreports-version>-->
        <!-- <jaspertreports-version>6.5.1</jaspertreports-version>-->
-        <ant-version>1.10.3</ant-version>
+        <ant-version>1.10.1</ant-version>
         <ivy-version>2.4.0</ivy-version>
         <jaspertreports-version>5.6.1</jaspertreports-version>
         <struts-jasperreports-plugin-version>2.5.16</struts-jasperreports-plugin-version>
