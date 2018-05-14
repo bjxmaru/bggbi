@@ -12,8 +12,58 @@
 
 
     <import resource="classpath*:applicationContext-dao.xml"/>
-    <context:component-scan base-package="com.bggbi.query.param.service.impl"/>
 
+
+    <bean id="txManagerBggwebdb" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactoryBggwebdb"></property>
+    </bean>
+
+    <tx:advice  id="txAdviceBggwebdb" transaction-manager="txManagerBggwebdb">
+        <tx:attributes>
+            <tx:method name="save*" read-only="false"  isolation="REPEATABLE_READ"  propagation="REQUIRED"   rollback-for="RuntimeException"/>
+            <tx:method name="update*"  read-only="false" propagation="REQUIRED" isolation="REPEATABLE_READ"  rollback-for="RuntimeException" />
+            <tx:method name="insert*"  read-only="false" propagation="REQUIRED"  isolation="REPEATABLE_READ"  rollback-for="RuntimeException"/>
+            <tx:method name="add*" read-only="false"  propagation="REQUIRED" rollback-for="RuntimeException"  isolation="REPEATABLE_READ"/>
+            <tx:method name="modify*"  read-only="false" propagation="REQUIRED" rollback-for="RuntimeException"  isolation="REPEATABLE_READ"/>
+            <tx:method name="del*" read-only="false" propagation="REQUIRED" rollback-for="RuntimeException"  isolation="REPEATABLE_READ"/>
+            <tx:method name="crud*" read-only="false" propagation="REQUIRED" rollback-for="RuntimeException"
+                       isolation="REPEATABLE_READ"/>
+            <tx:method name="register*" read-only="false" propagation="REQUIRED" rollback-for="RuntimeException"  isolation="REPEATABLE_READ"/>
+
+            <tx:method name="get*" propagation="REQUIRED" read-only="true" isolation="REPEATABLE_READ"/>
+            <tx:method name="find*" propagation="REQUIRED" read-only="true" isolation="REPEATABLE_READ"/>
+            <tx:method name="query*" propagation="REQUIRED" read-only="true" isolation="REPEATABLE_READ"/>
+            <tx:method name="*" propagation="REQUIRED" read-only="true"  isolation="REPEATABLE_READ"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut expression="execution (* com.bggbi..service.impl.*.*(..) )" id="bggwebdbPT"/>
+        <aop:advisor advice-ref="txAdviceBggwebdb" pointcut-ref="bggwebdbPT"/>
+    </aop:config>
+
+    <context:component-scan base-package="com.bggbi.query.param.service.impl"/>
+    <context:component-scan base-package="com.bggbi.jasper.service.impl"/>
+
+
+
+    <!--
+
+
+
+        <aop:config>
+            <aop:pointcut expression="execution (* com.bggbi..service.impl.*.*(..) )" id="bggwebdb"/>
+            <aop:advisor advice-ref="txAdviceBggwebdb" pointcut-ref="bggwebdb"/>
+        </aop:config>
+
+
+        <context:component-scan base-package="com.bggbi.jasper.service.impl"/>
+        <context:component-scan base-package="com.bggbi.query.param.service.impl"/>
+
+         <context:component-scan base-package="com.bggbi.query.param.service.impl"/>
+         <context:component-scan base-package="com.bggbi.jasper.service.impl"/>
+
+        -->
 
 
 </beans>

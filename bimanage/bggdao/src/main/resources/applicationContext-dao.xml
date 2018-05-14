@@ -13,6 +13,51 @@
 
     <import resource="classpath*:applicationContext-pojo.xml"/>
     <context:component-scan base-package="com.bggbi.query.param.dao.impl"/>
+    <context:component-scan base-package="com.bggbi.basedao.impl"/>
+
+    <bean name="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="fileEncoding" value="UTF-8" />
+        <property name="locations">
+            <list>
+                <value>classpath*:bggweb-db.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 数据库连接池 -->
+    <bean name="bggwebdb" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close" init-method="init">
+        <property name="url" value="${bggwebdb.url}" />
+        <property name="username" value = "${bggwebdb.username}" />
+        <property name="password" value ="${bggwebdb.password}" />
+        <property name = "driverClassName" value = "${bggwebdb.driverClassName}" />
+        <property name="maxActive" value = "${bggwebdb.maxActive}" />
+        <property name="initialSize" value = "${bggwebdb.initialSize}" />
+        <property name="maxWait" value = "${bggwebdb.maxWait}" />
+        <property name="minIdle" value = "${bggwebdb.minIdle}" />
+    </bean>
+
+
+    <!-- 配置sessionFactory -->
+    <bean id="sessionFactoryBggwebdb" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+
+        <property name="dataSource" ref="bggwebdb"/>
+
+        <property name="configLocations" value="classpath*:hibernate-mysql.cfg.xml"></property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath*:com/bggbi/basedoc/pojo/*.hbm.xml</value>
+            </list>
+
+
+        </property>
+    </bean>
+
+    <bean id="hibernateTemplateBggwebdb" class="org.springframework.orm.hibernate5.HibernateTemplate" scope="singleton" >
+        <property name="sessionFactory" ref="sessionFactoryBggwebdb"></property>
+    </bean>
+
+
+
 
 
 

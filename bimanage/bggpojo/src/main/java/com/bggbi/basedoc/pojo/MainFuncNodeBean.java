@@ -3,7 +3,9 @@ package com.bggbi.basedoc.pojo;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 功能节点信息
@@ -23,7 +25,7 @@ public class MainFuncNodeBean {
     /**
      * 节点的子节点列表
      */
-    private List<MainFuncNodeBean>  childrenList ;
+    private Set<MainFuncNodeBean> childrenSet = new HashSet<MainFuncNodeBean>(1);
 
     /**
      * 节点名称
@@ -51,6 +53,33 @@ public class MainFuncNodeBean {
     private Boolean  bParent ;
 
 
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public Integer getDr() {
+        return dr;
+    }
+
+    public void setDr(Integer dr) {
+        this.dr = dr;
+    }
+
+    /**
+     * 数据版本
+     */
+    private  Integer  version ;
+
+    /**
+     * 删除标识
+     */
+    private Integer dr ;
+
+
     public Integer getId() {
         return id;
     }
@@ -59,12 +88,12 @@ public class MainFuncNodeBean {
         this.id = id;
     }
 
-    public List<MainFuncNodeBean> getChildrenList() {
-        return childrenList;
+    public Set<MainFuncNodeBean> getChildrenSet() {
+        return childrenSet;
     }
 
-    public void setChildrenList(List<MainFuncNodeBean> childrenList) {
-        this.childrenList = childrenList;
+    public void setChildrenSet(Set<MainFuncNodeBean> childrenSet) {
+        this.childrenSet = childrenSet;
     }
 
     public String getFnName() {
