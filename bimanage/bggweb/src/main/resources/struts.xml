@@ -14,7 +14,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <constant name="struts.convention.action.mapallmatches" value="true"/>
 
-    <package name="default" namespace="/" extends="jasperreports-default,json-default ">
+    <package name="default" namespace="/" extends="jasperreports-default">
 
     </package>
 

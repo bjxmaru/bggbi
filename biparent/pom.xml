@@ -42,6 +42,8 @@
 
 
         <commons-javaflow>1590792</commons-javaflow>
+
+        <maven-compiler-plugin-version>3.7.0</maven-compiler-plugin-version>
     </properties>
 
 
@@ -249,10 +251,10 @@
         </dependency>
 
 
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-json-plugin</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.apache.struts</groupId>
@@ -359,9 +361,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin-version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
